@@ -20,7 +20,7 @@ p {
 
 header#cabecalho img#icon {
     position: absolute;
-    left: 800px;
+    left: 78%;
     top: 100px;
 }
 header#cabecalho {
@@ -105,4 +105,38 @@ nav#menu a:hover {
     transition: 1s;
     text-decoration: underline;
     color: white;
+}
+
+section#corpo {
+    display: block;
+    width: 470px;
+    float: left;
+    border-right: 1px solid #606060;
+    padding-right: 15px;
+}
+
+aside#lateral {
+    display: block;
+    width: 400px;
+    float: right;
+}
+
+footer#rodape {
+    border-top: 1px solid #606060;
+    clear: both;
+}
+footer#rodape p {
+    text-align: center;
+}
+
+table#tabelaspec {
+    border: 1px solid #606060;
+    border-spacing: 0px;
+    margin-left: 50px;
+}
+table#tabelaspec td {
+    border: 1px solid #606060;
+    padding: 10px;
+    text-align: right;
+    vertical-align: top;
 }
