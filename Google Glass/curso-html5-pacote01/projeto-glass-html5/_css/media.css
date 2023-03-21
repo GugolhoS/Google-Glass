@@ -1,0 +1,9 @@
+@charset "UTF-8";
+
+
+div#tv-radio {
+    background-image: url(../_imagens/radio-tv.png) no-repeat;
+    background-position: 50% 50%;
+}
+div#tv-radio video#filme {
+}

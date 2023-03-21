@@ -1,47 +1,99 @@
-Google Glass
-A revolução do Google está chegando
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Glass</title>
+    <link rel="stylesheet" type="text/css" href="_css/estilo.css">
+    <link rel="stylesheet" href="_css/form.css">
+</head>
+<script language="javascript" src="_javascript/funcoes.js"></script>
+<body>
+    <div id="interface">
+        <header id="cabecalho">
+            <h1>Google Glass</h1>
+            <h2>A revolução do Google está chegando</h2>
 
-[AQUI ENTRA UMA FOTO]
+            <img id="icone" src="_imagens/fotos.png" alt="Foto que muda quando mouse é passado por cima">
 
-Menu Principal
-- Home
-- Especificações
-- Fotos
-- Multimídia
-- Fale conosco
+            <nav id="menu">
+                <h1>Menu Principal</h1>
+                <ul>
+                    <li onmouseover="mudaFoto('icone', '_imagens/home.png')" onmouseout="mudaFoto('icone', '_imagens/fotos.png')"><a href="index.html">Home</a></li>
+                    <li onmouseover="mudaFoto('icone', '_imagens/especificacoes.png')" onmouseout="mudaFoto('icone', '_imagens/fotos.png')"><a href="specs.html">Especificações</a>
+                    <li onmouseover="mudaFoto('icone', '_imagens/fotos.png')" onmouseout="mudaFoto('icone', '_imagens/fotos.png')"><a href="fotos.html">Fotos</a>
+                    <li onmouseover="mudaFoto('icone', '_imagens/multimidia.png')" onmouseout="mudaFoto('icone', '_imagens/fotos.png')"><a href="multimidia.html">Multimídia</a>
+                    <li onmouseover="mudaFoto('icone', '_imagens/contato.png')" onmouseout="mudaFoto('icone', '_imagens/fotos.png')"><a href="fale-conosco.html">Fale conosco</a>
+                </ul>
+            </nav>
+        </header>
 
-Fale Conosco > Contato
-Formulário de Contato
-por Gustavo Guanabara
-Atualizado em 01/Maio/2013
+        <section id="corpo-full">
+            <article id="noticia-principal">
+                <header id="cabecalho-artigo">
+                    <hgrop>
+                        <h3>Fale Conosco > Contato</h3>
+                        <h1>Formulário de Contato</h1>
+                        <h2>por Gustavo Guanabara</h2>
+                        <h3 class="direita">Atualizado em 01/Maio/2013</3 >
+                    </hgrop>
+                </header>
 
-Identificação do Usuário
-    Nome:
-    Senha:
-    E-mail:
-    Sexo:
-        - Masculino
-        - Feminino
-    Data de Nascimento:
-
-Endereço do Usuário
-    Logradouro:
-    Número:
-    Estado:
-    Cidade:
-
-Mensagem do Usuário
-    Grau de Urgência:
-    Mensagem:
-
-Quero um Google Glass
-    Gostaria de adquirir um Google Glass quando disponível
-    Cor:
-    Quantidade:
-    Preço Total: R$
-
-
-[BOTÃO ENVIAR]
-
-Copyright 2013 - by Gustavo Guanabara
-Facebook | Twitter
+        <form>
+            <fieldset id="usuario">
+                <legend>Identificação do Usuário</legend>
+                    <p><label for="iNome">Nome:</label><input type="text" name="tNome" id="iNome" size="20" maxlength="30" placeholder="Nome Completo"></p>
+                    <p><label for="iSenha">Senha:</label><input type="password" name="tSenha" id="iSenha" size="8" maxlength="8" placeholder="8 digitos"></p>
+                    <p><label for="iEmail">E-mail:</label><input type="email" name="tEmail" id="tEmail" size="20" maxlength="50" placeholder="Exemplo@gmail.com"></p>
+                    <fieldset id="sexo">
+                        <legend>Sexo</legend>
+                            <input type="radio" name="tSex" id="iMas"/><label for="iMas">Masculino</label><br>
+                            <input type="radio" name="tSex" id="iFem"/><label for="iFem">Feminino</label>
+                    </fieldset>
+                    <p><label for="iData">Data de Nascimento:</label><input type="date" name="tData" id="iData"></p>
+            </fieldset>
+    
+            <fieldset id="endereco">
+                <legend>Endereço do Usuário</legend>
+                    <p><label for="iRua">Logradouro:</label><input type="text" name="tRua" id="iRua" size="13" maxlength="80" placeholder="Rua, Av, trav..."></p>
+                    <p><label for="iNumber">Número:</label><input type="number" name="tNumber" id="iNumber" min="0" max="9999"></p>
+                    <p><label for="iEstado">Estado:</label></p>
+                    <select name="tEstado" id="iEstado">
+                        <optgroup label="Região Sudeste">
+                            <option value="RJ">Rio de Janeiro</option>
+                            <option value="SP" selected>São Paulo</option>
+                            <option value="MG">Minas Gerais</option>
+                        </optgroup>
+                        <optgroup label="Região Sul">
+                            <option value="PR">Paraná</option>
+                            <option value="SC">Santa Catarina</option>
+                            <option value="RS">Rio Grande do Sul</option>
+                        </optgroup>
+                    </select>
+                    <p><label for="iCidade">Cidade:</label><input type="text" name="tCidade" id="iCidade" maxlength="40" size="20" placeholder="Sua Cidade"></p>
+            </fieldset>
+    
+            <fieldset id="mensagem">
+                <legend>Mensagem do Usuário</legend>
+                    <p><label for="iUrgencia">Grau de Urgência:</label>Min 0 <input type="range" name="tUrgencia" id="iUrgencia" min="0" max="10"> Máx 10</p>
+                    <p><label for="iMensagem">Mensagem:</label><textarea name="tMensagem" id="iMensagem" cols="45" rows="5"></textarea></p>
+            </fieldset>
+    
+            <fieldset id="pedido">
+                <legend>Quero um Google Glass</legend>
+                    <p><label for="iPedido">Gostaria de adquirir um Google Glass quando disponível</label></p>
+                    <p><label for="iCor">Cor:</label ></p>
+                    <p><label for="iQtd">Quantidade:</label></p>
+                    <p><label for="iTot">Preço Total: R$</label></p>
+            </fieldset>
+    
+            [BOTÃO ENVIAR]
+        </form>
+        <footer id="rodape">
+            <p>Copyright 2013 - by Gustavo Guanabara <br>
+            <a href="http://facebook.com/cursoemvideo" target="_blank">Facebook</a> |   <a href="http://twitter.com/cursoemvideo" target="_blank">Twitter</a></p> 
+        </footer>
+    </div>
+</body>
+</html>
