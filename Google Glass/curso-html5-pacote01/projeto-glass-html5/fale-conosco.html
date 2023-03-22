@@ -7,8 +7,15 @@
     <title>Google Glass</title>
     <link rel="stylesheet" type="text/css" href="_css/estilo.css">
     <link rel="stylesheet" href="_css/form.css">
+    <script language="javascript" src="_javascript/funcoes.js"></script>
+    <script>
+        function calc_total() {
+            var qtd = parseInt(document.getElementById('iQtd').value);
+            tot = qtd * 1500;
+            document.getElementById('iTot').value = tot
+        }
+    </script>
 </head>
-<script language="javascript" src="_javascript/funcoes.js"></script>
 <body>
     <div id="interface">
         <header id="cabecalho">
@@ -40,7 +47,7 @@
                     </hgrop>
                 </header>
 
-        <form>
+        <form method="post" id="fContato" action="mailto:contato@cursoemvideo.com" oninput="calc_total()">
             <fieldset id="usuario">
                 <legend>Identificação do Usuário</legend>
                     <p><label for="iNome">Nome:</label><input type="text" name="tNome" id="iNome" size="20" maxlength="30" placeholder="Nome Completo"></p>
@@ -56,39 +63,41 @@
     
             <fieldset id="endereco">
                 <legend>Endereço do Usuário</legend>
-                    <p><label for="iRua">Logradouro:</label><input type="text" name="tRua" id="iRua" size="13" maxlength="80" placeholder="Rua, Av, trav..."></p>
-                    <p><label for="iNumber">Número:</label><input type="number" name="tNumber" id="iNumber" min="0" max="9999"></p>
-                    <p><label for="iEstado">Estado:</label></p>
-                    <select name="tEstado" id="iEstado">
-                        <optgroup label="Região Sudeste">
-                            <option value="RJ">Rio de Janeiro</option>
-                            <option value="SP" selected>São Paulo</option>
-                            <option value="MG">Minas Gerais</option>
-                        </optgroup>
-                        <optgroup label="Região Sul">
-                            <option value="PR">Paraná</option>
-                            <option value="SC">Santa Catarina</option>
-                            <option value="RS">Rio Grande do Sul</option>
-                        </optgroup>
-                    </select>
-                    <p><label for="iCidade">Cidade:</label><input type="text" name="tCidade" id="iCidade" maxlength="40" size="20" placeholder="Sua Cidade"></p>
+                    <p><label for="iRua">Logradouro: </label><input type="text" name="tRua" id="iRua" size="13" maxlength="80" placeholder="Rua, Av, trav..."></p>
+                    <p><label for="iNumber">Número: </label><input type="number" name="tNumber" id="iNumber" min="0" max="9999"></p>
+                    <p><label for="iEstado">Estado:</label>
+                        <select name="tEstado" id="iEstado">
+                            <optgroup label="Região Sudeste">
+                                <option value="RJ">Rio de Janeiro</option>
+                                <option value="SP" selected>São Paulo</option>
+                                <option value="MG">Minas Gerais</option>
+                            </optgroup>
+                            <optgroup label="Região Sul">
+                                <option value="PR">Paraná</option>
+                                <option value="SC">Santa Catarina</option>
+                                <option value="RS">Rio Grande do Sul</option>
+                            </optgroup>
+                        </select>
+                    </p>
+                    <p><label for="iCidade">Cidade: </label><input type="text" name="tCidade" id="iCidade" maxlength="40" size="20" placeholder="Sua Cidade"></p>
             </fieldset>
     
             <fieldset id="mensagem">
                 <legend>Mensagem do Usuário</legend>
-                    <p><label for="iUrgencia">Grau de Urgência:</label>Min 0 <input type="range" name="tUrgencia" id="iUrgencia" min="0" max="10"> Máx 10</p>
+                    <p><label for="iUrgencia">Grau de Urgência:</label> Min 0 <input type="range" name="tUrgencia" id="iUrgencia" min="0" max="10"> Máx 10</p>
                     <p><label for="iMensagem">Mensagem:</label><textarea name="tMensagem" id="iMensagem" cols="45" rows="5"></textarea></p>
             </fieldset>
     
             <fieldset id="pedido">
                 <legend>Quero um Google Glass</legend>
-                    <p><label for="iPedido">Gostaria de adquirir um Google Glass quando disponível</label></p>
-                    <p><label for="iCor">Cor:</label ></p>
-                    <p><label for="iQtd">Quantidade:</label></p>
-                    <p><label for="iTot">Preço Total: R$</label></p>
+                    <p><input type="checkbox" name="tPed" id="iPed" checked><label for="iPedido"> Gostaria de adquirir um Google Glass quando disponível</label></p>
+                    <p><label for="iCor">Cor:</label > <input type="color" name="tCor" id="iCor"></p>
+                    <p><label for="iQtd">Quantidade: </label><input type="number" name="tQtd" id="iQtd" min="0" max="5" value="0"></p>
+                    <p><label for="iTot">Preço Total: R$</label> <input type="text" name="tTot" id="iTot" placeholder="Total a Pagar" readonly></p>
             </fieldset>
     
-            [BOTÃO ENVIAR]
+            <input type="button" value="Enviar">
+            <input type="image" src="_imagens/botao-enviar.png" alt="botão de inviar formulario">
         </form>
         <footer id="rodape">
             <p>Copyright 2013 - by Gustavo Guanabara <br>
