@@ -1,7 +1,7 @@
 # Google Glass
  Site criado com a ajuda do curso em video
  
- Aluno: Gustavo Lima dos Santos
+ Aluno: Gustavo Lima dos Santos<br>
  Professor: Gustavo Guanabara
  
  # A pagina pincipal
