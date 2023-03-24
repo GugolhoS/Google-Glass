@@ -6,12 +6,14 @@
 }
 
 body {
+    display: block;
     background-color: #ddd;
     color: rgba(0, 0, 0, 1);
     font-family: sans-serif;
 }
 
 div#interface {
+    position: relative;
     background-color: white;
     margin: -20px auto;
     padding: 50px;
@@ -92,7 +94,7 @@ nav#menu ul {
     position: absolute;
     list-style: none;
     text-transform: uppercase;
-    top: -20px;
+    top: -5px;
     left: 300px;
 }
 nav#menu li {
